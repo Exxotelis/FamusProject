@@ -1,0 +1,107 @@
+{% extends "FamusApp/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="page-heading header-text">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Game Gallery</h3>
+                <span class="breadcrumb"><a href="#">Home</a> > Game Gallery</span>
+            </div>
+        </div>
+    </div>
+  </div>
+<div class="game-details section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Game Details -->
+                <div class="game-header">
+                    <h2 id="game-name"></h2>
+                    <p class="category" id="game-category"></p>
+                    <p id="game-description"></p>
+                </div>
+
+                <!-- Game Image -->
+                <div class="game-image">
+                    <img src="" alt="" id="game-image" class="img-fluid">
+                </div>
+
+                <!-- Play Game Button -->
+                <div class="play-button">
+                    <a href="" id="play-link" class="btn btn-primary" target="_blank">Play Now</a>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <!-- Game Info Sidebar -->
+                <div class="game-info">
+                    <h4>Game Info</h4>
+                    <ul>
+                        <li><strong>Category:</strong> <span id="game-platform"></span></li>
+                        <li><strong>Platform:</strong> <span id="game-platform-name"></span></li>
+                        <li><strong>Release Date:</strong> <span id="game-release-date"></span></li>
+                        <li><strong>Developer:</strong> <span id="game-developer"></span></li>
+                    </ul>
+                </div>
+
+                <!-- Related Games -->
+                <div class="related-games">
+                    <h4>Related Games</h4>
+                    <div class="related-game-list" id="related-games-list">
+                        <!-- Related games will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    
+    const gameData = {
+    name: "PacMan",
+    category: "Arcade",
+    description: "Pac-Man is a classic arcade game where you guide Pac-Man through a maze, eating pellets and avoiding ghosts.",
+    image_url: "{% static 'images/pacman.jpg' %}",
+    play_link: "{% url 'pacman' %}",
+    platform: "Web",
+    release_date: "1980",
+    developer: "Namco",
+};
+
+
+    // Update the page with the game data
+    document.getElementById('game-name').textContent = gameData.name;
+    document.getElementById('game-category').textContent = gameData.category;
+    document.getElementById('game-description').textContent = gameData.description;
+    document.getElementById('game-image').src = gameData.image_url;
+    document.getElementById('play-link').href = gameData.play_link;
+    document.getElementById('game-platform').textContent = gameData.platform;
+    document.getElementById('game-platform-name').textContent = gameData.platform;
+    document.getElementById('game-release-date').textContent = gameData.release_date;
+    document.getElementById('game-developer').textContent = gameData.developer;
+
+    // Related Games (dummy data)
+    const relatedGames = [
+        { name: "Space Invaders", image_url: "{% static 'images/space_invaders.jpg' %}", link: "game_details.html?id=2" },
+        { name: "Tetris", image_url: "{% static 'images/tetris.jpg' %}", link: "game_details.html?id=3" },
+        { name: "Pac-Man", image_url: "{% static 'images/pacman.jpg' %}", link: "{% url 'pacman' %}" },
+    ];
+
+    // Display related games
+    const relatedGamesList = document.getElementById('related-games-list');
+    relatedGames.forEach(game => {
+        const gameItem = document.createElement('div');
+        gameItem.classList.add('related-game-item');
+        gameItem.innerHTML = `
+            <a href="${game.link}">
+                <img src="${game.image_url}" alt="${game.name}">
+                <p>${game.name}</p>
+            </a>
+        `;
+        relatedGamesList.appendChild(gameItem);
+    });
+</script>
+{% endblock %}

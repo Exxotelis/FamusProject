@@ -1,0 +1,163 @@
+{% extends 'FamusApp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="main-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 align-self-center">
+                <div class="caption header-text">
+                    <h6>Welcome to Famus Games</h6>
+                
+                    <h2>Your Ultimate Arcade Playground!</h2>
+                    <p>Famus Games brings you an exciting collection of classic arcade games, 
+                        free to play and packed with fun! Dive into iconic favorites like Pac-Man, Tetris, Space Invaders, and many more. 
+                        We’re dedicated to creating a top-notch gaming experience for everyone, 
+                        with user-friendly design and accessible gameplay to keep you entertained and coming back for more.</p>
+                    <div class="search-input">
+
+                        <form id="search" action="#">
+                            <input type="text" placeholder="Search for games" id="searchText" name="searchKeyword" onkeypress="handleSearch(event)" />
+                            <button type="submit">Search Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 offset-lg-2">
+                <div class="right-image">
+                    <img src="{% static 'images/banner-image.jpg' %}" alt="">
+                    <span class="price">Free</span>
+                    <span class="offer">Play</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="features">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <a href="#">
+                    <div class="item">
+                        <div class="image">
+                            <img src="{% static 'images/gaming/1.png' %}" alt="Fun and Games Icon" style="max-width: 44px;">
+                        </div>
+                        <h4>Endless Fun</h4>
+                        <p>Enjoy a wide variety of classic and modern arcade games, all available for free.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <a href="#">
+                    <div class="item">
+                        <div class="image">
+                            <img src="{% static 'images/gaming/2.png' %}" alt="Community Icon" style="max-width: 44px;">
+                        </div>
+                        <h4>Join the Fun</h4>
+                        <p>Join a community of gamers, challenge friends, and share your high scores.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <a href="#">
+                    <div class="item">
+                        <div class="image">
+                            <img src="{% static 'images/gaming/4.png' %}" alt="Accessibility Icon" style="max-width: 44px;">
+                        </div>
+                        <h4>Accessible for All</h4>
+                        <p>Our games are easy to play and accessible on any device, so you can enjoy them anywhere.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <a href="#">
+                    <div class="item">
+                        <div class="image">
+                            <img src="{% static 'images/gaming/3.png' %}" alt="User-Friendly Interface Icon" style="max-width: 44px;">
+                        </div>
+                        <h4>Simple Interface</h4>
+                        <p>An intuitive, user-friendly layout that makes it quick, easy, and fun to jump into any game.</p>
+
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="section trending">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-heading">
+                    <h6>Trending</h6>
+                    <h2>Trending Games</h2>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="main-button">
+                    <a href="{% url 'games' %}">View All Games</a>
+                </div>
+            </div>
+            <!-- Repeat the following item block for each game -->
+            <div class="col-lg-3 col-md-6">
+                <div class="item">
+                    <div class="thumb">
+                        <a href="{% url 'game_details' %}"><img src="{% static 'images/trending-01.jpg' %}" alt="Game 1"></a>
+                    </div>
+                    <div class="down-content">
+                        <span class="category">Action</span>
+                        <h4>Space Invaders</h4>
+                        <a href="{% url 'game_details' %}"><i class="fa fa-play-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat similar blocks for other games -->
+            <div class="col-lg-3 col-md-6">
+                <div class="item">
+                    <div class="thumb">
+                        <a href="{% url 'game_details' %}"><img src="{% static 'images/trending-02.jpg' %}" alt="Game 2"></a>
+                    </div>
+                    <div class="down-content">
+                        <span class="category">Puzzle</span>
+                        <h4>Tetris</h4>
+                        <a href="{% url 'game_details' %}"><i class="fa fa-play-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="item">
+                    <div class="thumb">
+                        <a href="{% url 'game_details' %}"><img src="{% static 'images/trending-03.jpg' %}" alt="Game 3"></a>
+                    </div>
+                    <div class="down-content">
+                        <span class="category">Adventure</span>
+                        <h4>Asteroids</h4>
+                        <a href="{% url 'game_details' %}"><i class="fa fa-play-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="item">
+                    <div class="thumb">
+                        <a href="{% url 'game_details' %}"><img src="{% static 'images/trending-04.jpg' %}" alt="Game 4"></a>
+                    </div>
+                    <div class="down-content">
+                        <span class="category">Arcade</span>
+                        <h4>Pac-Man</h4>
+                        <a href="{% url 'game_details' %}"><i class="fa fa-play-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- More game blocks can be added as needed -->
+        </div>
+    </div>
+</div>
+
+<!-- Other sections like Most Played, Categories, etc. can follow the same structure -->
+
+{% endblock %}
