@@ -13,5 +13,7 @@ urlpatterns = [
     path('tetris/', views.tetris_view, name='tetris'),
     path('space_invaders/', views.space_invaders, name='space_invaders'),
     path('game_details', views.game_details, name='game_details'),
+    path('<slug:slug>/', views.game_detail, name='game_detail'),  # Direct game detail page without /games/
+
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

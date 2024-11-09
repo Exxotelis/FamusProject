@@ -4,20 +4,16 @@
 
 {% block content %}
 
+<!-- Main Banner Section -->
 <div class="main-banner">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 align-self-center">
                 <div class="caption header-text">
                     <h6>Welcome to Famus Games</h6>
-                
                     <h2>Your Ultimate Arcade Playground!</h2>
-                    <p>Famus Games brings you an exciting collection of classic arcade games, 
-                        free to play and packed with fun! Dive into iconic favorites like Pac-Man, Tetris, Space Invaders, and many more. 
-                        We’re dedicated to creating a top-notch gaming experience for everyone, 
-                        with user-friendly design and accessible gameplay to keep you entertained and coming back for more.</p>
+                    <p>Famus Games brings you an exciting collection of classic arcade games, free to play and packed with fun! Dive into iconic favorites like Pac-Man, Tetris, Space Invaders, and many more. We’re dedicated to creating a top-notch gaming experience for everyone, with user-friendly design and accessible gameplay to keep you entertained and coming back for more.</p>
                     <div class="search-input">
-
                         <form id="search" action="#">
                             <input type="text" placeholder="Search for games" id="searchText" name="searchKeyword" onkeypress="handleSearch(event)" />
                             <button type="submit">Search Now</button>
@@ -27,7 +23,7 @@
             </div>
             <div class="col-lg-4 offset-lg-2">
                 <div class="right-image">
-                    <img src="{% static 'images/banner-image.jpg' %}" alt="">
+                    <img src="{% static 'images/banner-image.jpg' %}" alt="Famus Games Banner">
                     <span class="price">Free</span>
                     <span class="offer">Play</span>
                 </div>
@@ -36,6 +32,7 @@
     </div>
 </div>
 
+<!-- Features Section -->
 <div class="features">
     <div class="container">
         <div class="row">
@@ -80,7 +77,6 @@
                         </div>
                         <h4>Simple Interface</h4>
                         <p>An intuitive, user-friendly layout that makes it quick, easy, and fun to jump into any game.</p>
-
                     </div>
                 </a>
             </div>
@@ -88,7 +84,7 @@
     </div>
 </div>
 
-
+<!-- Trending Games Section -->
 <div class="section trending">
     <div class="container">
         <div class="row">
@@ -103,11 +99,11 @@
                     <a href="{% url 'games' %}">View All Games</a>
                 </div>
             </div>
-            <!-- Repeat the following item block for each game -->
+            <!-- Game Blocks for Trending Games -->
             <div class="col-lg-3 col-md-6">
                 <div class="item">
                     <div class="thumb">
-                        <a href="{% url 'space_invaders' %}"><img src="{% static 'images/trending-01.jpg' %}" alt="Game 1"></a>
+                        <a href="{% url 'space_invaders' %}"><img src="{% static 'images/trending-01.jpg' %}" alt="Space Invaders Game"></a>
                     </div>
                     <div class="down-content">
                         <span class="category">Action</span>
@@ -116,11 +112,10 @@
                     </div>
                 </div>
             </div>
-            <!-- Repeat similar blocks for other games -->
             <div class="col-lg-3 col-md-6">
                 <div class="item">
                     <div class="thumb">
-                        <a href="{% url 'tetris' %}"><img src="{% static 'images/trending-02.jpg' %}" alt="Game 2"></a>
+                        <a href="{% url 'tetris' %}"><img src="{% static 'images/trending-02.jpg' %}" alt="Tetris Game"></a>
                     </div>
                     <div class="down-content">
                         <span class="category">Puzzle</span>
@@ -132,7 +127,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="item">
                     <div class="thumb">
-                        <a href="{% url 'asteroids' %}"><img src="{% static 'images/trending-03.jpg' %}" alt="Game 3"></a>
+                        <a href="{% url 'asteroids' %}"><img src="{% static 'images/trending-03.jpg' %}" alt="Asteroids Game"></a>
                     </div>
                     <div class="down-content">
                         <span class="category">Adventure</span>
@@ -144,7 +139,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="item">
                     <div class="thumb">
-                        <a href="{% url 'pacman' %}"><img src="{% static 'images/trending-04.jpg' %}" alt="Game 4"></a>
+                        <a href="{% url 'pacman' %}"><img src="{% static 'images/trending-04.jpg' %}" alt="Pac-Man Game"></a>
                     </div>
                     <div class="down-content">
                         <span class="category">Arcade</span>
@@ -153,11 +148,28 @@
                     </div>
                 </div>
             </div>
-            <!-- More game blocks can be added as needed -->
         </div>
     </div>
 </div>
 
-<!-- Other sections like Most Played, Categories, etc. can follow the same structure -->
+<!-- Placeholder for Google AdSense -->
+<div class="adsense-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <!-- Replace with your AdSense code -->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="YOUR_AD_CLIENT"
+                     data-ad-slot="YOUR_AD_SLOT"
+                     data-ad-format="auto"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

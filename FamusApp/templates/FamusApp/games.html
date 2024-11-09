@@ -1,17 +1,54 @@
 {% extends 'FamusApp/base.html' %}
 {% load static %}
 
+<title>{% block title %}Classic Arcade Games Gallery - Pac-Man, Asteroids & More{% endblock %}</title>
+<meta name="description"
+    content="Explore our games gallery with timeless classics like Pac-Man, Asteroids, and Tetris. Relive the nostalgia with our curated selection of iconic arcade games.">
+
 {% block content %}
 
+<!-- Schema Markup for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "CollectionPage",
+  "name": "Classic Games Gallery",
+  "description": "Discover and play classic arcade games like Pac-Man, Asteroids, and Tetris.",
+  "mainEntity": [
+    {% for item in Argames %}
+    {
+      "@type": "VideoGame",
+      "name": "{{ item.name }}",
+      "url": "{% url 'game_detail' item.slug %}",
+      "image": "{% static item.image %}",
+      "genre": "{{ item.category }}"
+    }{% if not forloop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+
 <div class="page-heading header-text">
-  <div class="container">
-      <div class="row">
-          <div class="col-lg-12">
-              <h3>Game Gallery</h3>
-              <span class="breadcrumb"><a href="#">Home</a> > Game Gallery</span>
-          </div>
-      </div>
-  </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Game Gallery</h1>
+                <span class="breadcrumb">
+                    <a href="{% url 'home' %}">Home</a> > Game Gallery
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Google AdSense Ad after Page Heading -->
+<div class="ad-container">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-your-ad-client-id"
+        data-ad-slot="your-ad-slot-id" data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 </div>
 
 <div class="section trending">
@@ -19,120 +56,89 @@
         <!-- Filter Buttons -->
         <ul class="trending-filter">
             <li><a class="is_active" href="#!" data-filter="*">Show All</a></li>
-            <li><a href="#!" data-filter=".adv">Adventure</a></li>
-            <li><a href="#!" data-filter=".pac">Pac-Man</a></li>
-            <li><a href="#!" data-filter=".ast">Asteroids</a></li>
-            <li><a href="#!" data-filter=".tet">Tetris</a></li>
-            <li><a href="#!" data-filter=".spi">Space Invaders</a></li>
+            {% for category in categories %}
+            <li><a href="#!" data-filter=".{{ category|slugify }}">{{ category }}</a></li>
+            {% endfor %}
         </ul>
-  
+
         <!-- Game Items -->
         <div class="row trending-box">
-            <!-- Pac-Man Game -->
-            <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items pac">
+            {% for item in Argames %}
+            <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items {{ item.category|slugify }}">
                 <div class="item">
                     <div class="thumb">
-                        <a href="{% url 'pacman' %}"><img src="{% static 'images/PacMan.jpg' %}" alt="Pac-Man"></a>
+                        <a href="{% url 'game_detail' item.slug %}">
+                            <img src="{% static item.image %}" alt="Screenshot of {{ item.name }}">
+                        </a>
                     </div>
                     <div class="down-content">
-                        <span class="category">Classic Arcade</span>
-                        <h4>Pac-Man</h4>
-                        <a href="{% url 'pacman' %}"><i class="fa fa-gamepad"></i></a>
+                        <span class="category">{{ item.category }}</span>
+                        <h4>{{ item.name }}</h4>
+                        <a href="{% url 'game_detail' item.slug %}">
+                            <i class="fa fa-gamepad"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-  
-            <!-- Asteroids Game -->
-            <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items ast">
-                <div class="item">
-                    <div class="thumb">
-                        <a href="{% url 'asteroids' %}"><img src="{% static 'images/asteroids.jpg' %}" alt="Asteroids"></a>
-                    </div>
-                    <div class="down-content">
-                        <span class="category">Classic Arcade</span>
-                        <h4>Asteroids</h4>
-                        <a href="{% url 'asteroids' %}"><i class="fa fa-gamepad"></i></a>
-                    </div>
-                </div>
-            </div>
-  
-            <!-- Tetris Game -->
-            <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items tet">
-                <div class="item">
-                    <div class="thumb">
-                        <a href="{% url 'tetris' %}"><img src="{% static 'images/tetris.png' %}" alt="Tetris"></a>
-                    </div>
-                    <div class="down-content">
-                        <span class="category">Puzzle</span>
-                        <h4>Tetris</h4>
-                        <a href="{% url 'tetris' %}"><i class="fa fa-gamepad"></i></a>
-                    </div>
-                </div>
-            </div>
-  
-            <!-- Space Invaders Game -->
-            <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items spi">
-                <div class="item">
-                    <div class="thumb">
-                        <a href="{% url 'space_invaders' %}"><img src="{% static 'images/SpaceInvaders.jpg' %}" alt="Space Invaders"></a>
-                    </div>
-                    <div class="down-content">
-                        <span class="category">Classic Shooter</span>
-                        <h4>Space Invaders</h4>
-                        <a href="{% url 'space_invaders' %}"><i class="fa fa-gamepad"></i></a>
-                    </div>
-                </div>
-            </div>
-  
-        </div>
-  
-        <!-- Pagination -->
-        <div class="row">
-            <div class="col-lg-12">
-                <nav aria-label="Page navigation">
-                    <ul class="pagination justify-content-center">
-                        {% if page_obj.has_previous %}
-                            <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">&lt;</a></li>
-                        {% endif %}
-  
-                        {% for page_num in page_obj.paginator.page_range %}
-                            <li class="page-item {% if page_num == page_obj.number %}active{% endif %}">
-                                <a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a>
-                            </li>
-                        {% endfor %}
-  
-                        {% if page_obj.has_next %}
-                            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">&gt;</a></li>
-                        {% endif %}
-                    </ul>
-                </nav>
-            </div>
+            {% endfor %}
         </div>
     </div>
-  </div>
-  
-  <script>
-  // JavaScript for Filtering
-  document.querySelectorAll('.trending-filter a').forEach(filterLink => {
-      filterLink.addEventListener('click', (e) => {
-          e.preventDefault();
-          
-          // Remove active class from all links and add to clicked link
-          document.querySelectorAll('.trending-filter a').forEach(link => link.classList.remove('is_active'));
-          filterLink.classList.add('is_active');
-  
-          // Filter items based on the data-filter attribute
-          const filterValue = filterLink.getAttribute('data-filter');
-          document.querySelectorAll('.trending-items').forEach(item => {
-              if (filterValue === '*' || item.classList.contains(filterValue.slice(1))) {
-                  item.style.display = 'block';
-              } else {
-                  item.style.display = 'none';
-              }
-          });
-      });
-  });
-  </script>
-  
+    <!-- Google AdSense Ad after Page Heading -->
+    <div class="ad-container">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-your-ad-client-id"
+            data-ad-slot="your-ad-slot-id" data-ad-format="auto"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+    <!-- Pagination -->
+    <div class="row">
+        <div class="col-lg-12">
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    {% if page_obj.has_previous %}
+                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">&lt;</a>
+                    </li>
+                    {% endif %}
+
+                    {% for page_num in page_obj.paginator.page_range %}
+                    <li class="page-item {% if page_num == page_obj.number %}active{% endif %}">
+                        <a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a>
+                    </li>
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">&gt;</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<script>
+    // JavaScript for Filtering
+    document.querySelectorAll('.trending-filter a').forEach(filterLink => {
+        filterLink.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // Remove active class from all links and add to clicked link
+            document.querySelectorAll('.trending-filter a').forEach(link => link.classList.remove('is_active'));
+            filterLink.classList.add('is_active');
+
+            // Filter items based on the data-filter attribute
+            const filterValue = filterLink.getAttribute('data-filter');
+            document.querySelectorAll('.trending-items').forEach(item => {
+                if (filterValue === '*' || item.classList.contains(filterValue.slice(1))) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
 
 {% endblock %}

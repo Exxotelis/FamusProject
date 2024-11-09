@@ -16,6 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.sitemaps.views import sitemap
+from FamusApp.sitemaps import StaticViewSitemap
+
+sitemaps = {
+    'static': StaticViewSitemap,
+}
+
+urlpatterns = [
+    # other URL patterns
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django-sitemap'),
+]
 
 urlpatterns = [
     path('admin/', admin.site.urls),

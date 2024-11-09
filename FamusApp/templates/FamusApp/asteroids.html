@@ -1,36 +1,78 @@
 {% load static %}
 
-
-
 {% block head %}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-{% block title %}<title>JS Asteroids Game</title>{% endblock %}
+<meta name="description" content="Play the JS Asteroids game. Relive the classic arcade experience with interactive gameplay, laser shooting, and spaceship navigation.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="JS Asteroids Game">
+<meta property="og:description" content="Play the JS Asteroids game and enjoy the nostalgic arcade experience. Navigate your spaceship and shoot lasers to survive.">
+<meta property="og:image" content="{% static 'images/asteroids-thumbnail.jpg' %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="JS Asteroids Game">
+<meta name="twitter:description" content="Play the JS Asteroids game. Experience the thrill of asteroid destruction and spaceship survival in this interactive arcade game.">
+<meta name="twitter:image" content="{% static 'images/asteroids-thumbnail.jpg' %}">
+<meta name="twitter:creator" content="@yourtwitterhandle">
+<title>{% block title %}JS Asteroids Game{% endblock %}</title>
 <link rel="stylesheet" href="{% static 'css/asteroids.css' %}">
 <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" 
 	integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
 <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
 {% endblock %}
 
 {% block content %}
-<a href="{% url 'home' %}"><i class="fa fa-home"></i> <i class="fa fa-arrow-right"></i> Home</a>
-<main tabindex="0">
-	<canvas id="gameCanvas" width="700" height="500"></canvas>
-</main>
-<div id="instructions">
-	<div class="commands"><kbd><i class="fas fa-arrow-up" aria-hidden="true" aria-label="up arrow key"></i></kbd>propel
-		the ship</div>
-	<div class="commands"><kbd><i class="fas fa-arrow-left" aria-hidden="true"
-				aria-label="left arrow key"></i></kbd><kbd><i class="fas fa-arrow-right" aria-hidden="true"
-				aria-label="right arrow key"></i></kbd>move the ship</div>
-	<div class="commands"><kbd>Space</kbd>shoot lasers</div>
+<!-- Google AdSense Ad in Header -->
+<div class="ad-container">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-client="ca-pub-your-ad-client-id"
+         data-ad-slot="your-ad-slot-id"
+         data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 </div>
+
+<a href="{% url 'home' %}"><i class="fa fa-home"></i> <i class="fa fa-arrow-right"></i> Home</a>
+
+<main tabindex="0">
+	<canvas id="gameCanvas" width="700" height="500" aria-label="JS Asteroids Game: A spaceship navigating asteroids and shooting lasers."></canvas>
+</main>
+
+<div id="instructions">
+	<div class="commands">
+		<kbd><i class="fas fa-arrow-up" aria-hidden="true" aria-label="up arrow key"></i></kbd> propel the ship
+	</div>
+	<div class="commands">
+		<kbd><i class="fas fa-arrow-left" aria-hidden="true" aria-label="left arrow key"></i></kbd>
+		<kbd><i class="fas fa-arrow-right" aria-hidden="true" aria-label="right arrow key"></i></kbd> move the ship
+	</div>
+	<div class="commands"><kbd>Space</kbd> shoot lasers</div>
+</div>
+
+<!-- Google AdSense Ad Below the Game Canvas -->
+<div class="ad-container">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-client="ca-pub-your-ad-client-id"
+         data-ad-slot="your-ad-slot-id"
+         data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
 <div class="volume">
 	<i id="music" class="fas fa-music mute" aria-hidden="true" aria-label="sound off"></i>
 	<div id="sound"><i class="fas fa-volume-mute" aria-hidden="true" aria-label="sound off"></i></div>
 </div>
+
 <p id="alert">Sorry, you can't play from a mobile or a tablet...</p>
+
 {% block js %}
 <script src="{% static 'js/asteroids.js' %}"></script>
 {% endblock %}

@@ -2,20 +2,27 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <meta name="description" content="Famus Gaming Arcade - The ultimate gaming experience with a wide variety of games to play, tips, and more.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Famus Gaming Arcade">
+    <meta property="og:description" content="Famus Gaming Arcade offers an exciting collection of online games, game tips, and a platform to connect with fellow gamers.">
+    <meta property="og:image" content="{% static 'images/logo/famuslogo7.png' %}">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Famus Gaming Arcade">
+    <meta name="twitter:description" content="Explore Famus Gaming Arcade for the best gaming tips, gallery, and experience the thrill of games.">
+    <meta name="twitter:image" content="{% static 'images/logo/famuslogo7.png' %}">
+    <meta name="twitter:creator" content="@yourtwitterhandle">
 
     <title>{% block title %} Famus Gaming Arcade {% endblock %}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
-
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
@@ -41,14 +48,14 @@
     <!-- ***** Preloader End ***** -->
 
     <!-- ***** Header Area Start ***** -->
-    <header class="header-area ">
+    <header class="header-area">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="{% url 'home' %}" class="logo">
-                            <img src="{% static 'images/logo/famuslogo7.png' %}" alt="" style="width: 158px;">
+                            <img src="{% static 'images/logo/famuslogo7.png' %}" alt="Famus Gaming Arcade Logo" style="width: 158px;">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
@@ -57,7 +64,6 @@
                             <li><a href="{% url 'games' %}">Gallery</a></li>
                             <li><a href="{% url 'game_tips' %}">Game Tips</a></li>
                             <li><a href="{% url 'contact' %}">Contact Us</a></li>
-                            <li><a href="#">Sign In</a></li>
                         </ul>
                         <a class="menu-trigger">
                             <span>Menu</span>
@@ -70,18 +76,32 @@
     </header>
     <!-- ***** Header Area End ***** -->
 
-    {% block content %}
 
+    {% block content %}
     {% endblock %}
 
+    <!-- Google AdSense Ad Below Content -->
+    <div class="ad-container">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-client="ca-pub-your-ad-client-id"
+             data-ad-slot="your-ad-slot-id"
+             data-ad-format="auto"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <!-- ***** Footer Area Start ***** -->
     <footer>
         <div class="container">
             <div class="col-lg-12">
-                <p>Copyright © 2048 Famus Games. All rights reserved. &nbsp;&nbsp; <a rel="nofollow"
-                        href="https://likefamus.com" target="_blank">Design: VorinVista</a></p>
+                <p>Copyright © 2048 Famus Games. All rights reserved. &nbsp;&nbsp; <a rel="nofollow" href="https://likefamus.com" target="_blank">Design: VorinVista</a></p>
             </div>
         </div>
     </footer>
+    <!-- ***** Footer Area End ***** -->
 
     <!-- Scripts -->
     <!-- Bootstrap core JavaScript -->
@@ -93,9 +113,6 @@
     <script src="{% static 'js/custom.js' %}"></script>
     {% block js %}
     {% endblock %}
-
-    <!-- Link to your static files (JS and CSS) -->
-
 
 </body>
 
