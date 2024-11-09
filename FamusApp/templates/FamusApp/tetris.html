@@ -1,8 +1,11 @@
-
+{% load static %}
 {% block head %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/ca42bbbf84.js" crossorigin="anonymous"></script>
 <style>
-    html,
-    body {
+    html, body {
         height: 100%;
         margin: 0;
     }
@@ -14,16 +17,84 @@
         justify-content: center;
     }
 
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 100vw;
+        height: 100vh;
+    }
+
+    .sidebar {
+        width: 37vw; /* Adjust width as needed */
+        height: 100%;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    #left-sidebar {
+        background-color: #222; /* Customize colors as needed */
+    }
+
+    #right-sidebar {
+        background-color: #333;
+    }
+
+    .game-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     canvas {
         border: 1px solid white;
+    }
+
+    .instructions {
+        margin-top: 20px;
+        text-align: center;
     }
 </style>
 {% endblock %}
 
 {% block content %}
 
-<canvas width="320" height="640" id="game"></canvas>
+<div class="container">
+    
+    <!-- Left sidebar with instructions -->
+    <div id="left-sidebar" class="sidebar">
+       
+        <a href="{% url 'home' %}"><i class="fa fa-home"></i> <i class="fa fa-arrow-right"></i> Home</a>
+
+            
+          
+        <h2>Game Instructions</h2>
+        <div class="instructions">
+            <p><strong>Controls:</strong></p>
+            <p>⬅️ Move Left</p>
+            <p>➡️ Move Right</p>
+            <p>⬆️ Rotate</p>
+            <p>⬇️ Move Down Faster</p>
+        </div>
+    </div>
+
+    <!-- Game container -->
+    <div class="game-container">
+        <canvas width="320" height="640" id="game"></canvas>
+    </div>
+
+    <!-- Right sidebar -->
+    <div id="right-sidebar" class="sidebar">
+        <p>More Content</p>
+    </div>
+</div>
 {% endblock %}
+
 {% block js %}
 <script>
 
