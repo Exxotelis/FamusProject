@@ -10,9 +10,18 @@ body{
 #logo{
 	width: 700px;
 }
+.page-heading {
+	padding-bottom: 10px; /* Adds space below the breadcrumb */
+  }
+  
+  .breadcrumb {
+	display: inline-block;
+	
+	font-size: 24px;
+  }
 
 h2{
-	margin: -30px auto 5px auto;
+	margin: 10px auto 5px auto;
 	color: rgb(246, 184, 30);
 	font-size: 28px;
 	font-weight: lighter;
@@ -48,7 +57,7 @@ kbd{
 	text-transform: uppercase;
 	background-color: rgb(246, 184, 30);
 	border: 2px solid rgba(239,0,0,1.00);
-	z-index: 100;
+	z-index: 1000;
 	cursor: pointer;
 }
 
@@ -57,7 +66,7 @@ kbd{
 	flex-wrap: wrap;
 	width: 560px;
 	height: 560px;
-	margin-bottom: 80px;
+	margin-bottom: 10px;
 }
 
 .grid div{
@@ -283,7 +292,7 @@ footer{
 		margin: 0;
 	}
 	#logo{
-		width: 100vw;
+		width: 80vw;
 	}
 	h2{
 		margin: -20px auto 20px auto;
