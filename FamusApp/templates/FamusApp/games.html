@@ -19,7 +19,7 @@
     {
       "@type": "VideoGame",
       "name": "{{ item.name }}",
-      "url": "{% url 'game_detail' item.slug %}",
+      "url": "#",
       "image": "{% static item.image %}",
       "genre": "{{ item.category }}"
     }{% if not forloop.last %},{% endif %}
@@ -27,29 +27,6 @@
   ]
 }
 </script>
-
-<div class="page-heading header-text">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1>Game Gallery</h1>
-                <span class="breadcrumb">
-                    <a href="{% url 'home' %}">Home</a> > Game Gallery
-                </span>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Google AdSense Ad after Page Heading -->
-<div class="ad-container">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-your-ad-client-id"
-        data-ad-slot="your-ad-slot-id" data-ad-format="auto"></ins>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-</div>
 
 <div class="section trending">
     <div class="container">
@@ -61,62 +38,90 @@
             {% endfor %}
         </ul>
 
-        <!-- Game Items -->
-        <div class="row trending-box">
-            {% for item in Argames %}
-            <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items {{ item.category|slugify }}">
-                <div class="item">
-                    <div class="thumb">
-                        <a href="{% url 'game_detail' item.slug %}">
-                            <img src="{% static item.image %}" alt="Screenshot of {{ item.name }}">
-                        </a>
+
+        
+
+                
+                        <!-- Game Items -->
+                        <div class="row trending-box">
+                            {% for game in Argames %}
+                            <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items {{ game.category|slugify }}">
+                                <div class="item">
+                                    <div class="thumb">
+                                        {% if game.is_external and game.external_link %}
+                                        <!-- External game link -->
+                                        <a href="{{ game.external_link }}" target="_blank">
+                                            <img src="{% static game.image %}" alt="{{ game.name }}">
+                                        </a>
+                                        {% elif game.slug %}
+                                        <!-- Internal game link -->
+                                        <a href="{% url 'game_detail' game.slug %}">
+                                            <img src="{% static game.image %}" alt="{{ game.name }}">
+                                        </a>
+                                        {% else %}
+                                        <!-- No link, just the image -->
+                                        <img src="{% static game.image %}" alt="{{ game.name }}">
+                                        {% endif %}
+                                    </div>
+                                    <div class="down-content">
+                                        <span class="category">{{ game.category }}</span>
+                                        <h4>{{ game.name }}</h4>
+                                        {% if game.is_external and game.external_link %}
+                                        <a href="{{ game.external_link }}" target="_blank">
+                                            <i class="fa fa-gamepad"></i>
+                                        </a>
+                                        {% elif game.slug %}
+                                        <a href="{% url 'game_detail' game.slug %}">
+                                            <i class="fa fa-gamepad"></i>
+                                        </a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
                     </div>
-                    <div class="down-content">
-                        <span class="category">{{ item.category }}</span>
-                        <h4>{{ item.name }}</h4>
-                        <a href="{% url 'game_detail' item.slug %}">
-                            <i class="fa fa-gamepad"></i>
-                        </a>
+                
+                    <!-- Google AdSense Ad after Page Heading -->
+                    <div class="ad-container">
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-your-ad-client-id"
+                            data-ad-slot="your-ad-slot-id" data-ad-format="auto"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                
+                    <!-- Pagination -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination justify-content-center">
+                                    {% if page_obj.has_previous %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">&lt;</a>
+                                    </li>
+                                    {% endif %}
+                
+                                    {% for page_num in page_obj.paginator.page_range %}
+                                    <li class="page-item {% if page_num == page_obj.number %}active{% endif %}">
+                                        <a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a>
+                                    </li>
+                                    {% endfor %}
+                
+                                    {% if page_obj.has_next %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ page_obj.next_page_number }}">&gt;</a>
+                                    </li>
+                                    {% endif %}
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                 </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-    <!-- Google AdSense Ad after Page Heading -->
-    <div class="ad-container">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-your-ad-client-id"
-            data-ad-slot="your-ad-slot-id" data-ad-format="auto"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
-    <!-- Pagination -->
-    <div class="row">
-        <div class="col-lg-12">
-            <nav aria-label="Page navigation">
-                <ul class="pagination justify-content-center">
-                    {% if page_obj.has_previous %}
-                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">&lt;</a>
-                    </li>
-                    {% endif %}
+                
+        
 
-                    {% for page_num in page_obj.paginator.page_range %}
-                    <li class="page-item {% if page_num == page_obj.number %}active{% endif %}">
-                        <a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a>
-                    </li>
-                    {% endfor %}
-
-                    {% if page_obj.has_next %}
-                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">&gt;</a>
-                    </li>
-                    {% endif %}
-                </ul>
-            </nav>
-        </div>
-    </div>
-</div>
 
 <script>
     // JavaScript for Filtering

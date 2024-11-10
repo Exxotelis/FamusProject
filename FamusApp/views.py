@@ -20,26 +20,87 @@ def games(request):
             'name': 'Pac-Man',
             'category': 'Classic Arcade',
             'image': 'images/PacMan.jpg',
-            'slug': 'pacman'
+            'slug': 'pacman',
+            'is_external': False
         },
         {
             'name': 'Asteroids',
             'category': 'Classic Arcade',
             'image': 'images/asteroids.jpg',
-            'slug': 'asteroids'
+            'slug': 'asteroids',
+            'is_external': False
         },
         {
             'name': 'Tetris',
             'category': 'Puzzle',
             'image': 'images/tetris.jpg',
-            'slug': 'tetris'
+            'slug': 'tetris',
+            'is_external': False
         },
         {
             'name': 'Space Invaders',
             'category': 'Classic Shooter',
             'image': 'images/SpaceInvaders.jpg',
-            'slug': 'space_invaders'
+            'slug': 'space_invaders',
+            'is_external': False
         },
+        {
+            'name': 'Bubble Tower 3D',
+            'category': '3D Puzzle',
+            'image': 'images/3Dteasers/BubbleTower.jpg',
+            'external_link': 'https://play.famobi.com/bubble-tower-3d',
+            'is_external': True
+        },
+        {
+            'name': 'CannonBalls',
+            'category': '3D',
+            'image': 'images/3Dteasers/CannonBalls.jpg',
+            'external_link': 'https://play.famobi.com/cannon-balls-3d',
+            'is_external': True
+        },
+        {
+            'name': 'Solitaire Klondike',
+            'category': 'Card Game',
+            'image': 'images/3Dteasers/SolitaireKlondike.jpg',
+            'external_link': 'https://play.famobi.com/solitaire-klondike',
+            'is_external': True
+        },
+        {
+            'name': '8 Ball Billiards Classic',
+            'category': 'Sports',
+            'image': 'images/3Dteasers/8BallBilliardsClassic.jpg',
+            'external_link': 'https://play.famobi.com/8-ball-billiards-classic',
+            'is_external': True
+        },
+        {
+            'name': 'Rising Squares',
+            'category': 'Puzzle Arcade',
+            'image': 'images/3Dteasers/RisingSquares.jpg',
+            'external_link': 'https://play.famobi.com/rising-squares',
+            'is_external': True
+        },
+        {
+            'name': 'Block Painter',
+            'category': 'Creative Puzzle',
+            'image': 'images/3Dteasers/BlockPainter.jpg',
+            'external_link': 'https://play.famobi.com/block-painter',
+            'is_external': True
+        },
+        {
+            'name': 'Speed Master',
+            'category': 'Racing Arcade',
+            'image': 'images/3Dteasers/SpeedMaster.jpg',
+            'external_link': 'https://play.famobi.com/speed-master',
+            'is_external': True
+        },
+        {
+            'name': 'Crazy Caves',
+            'category': 'Adventure Arcade',
+            'image': 'images/3Dteasers/CrazyCaves.jpg',
+            'external_link': 'https://play.famobi.com/crazy-caves',
+            'is_external': True
+        },
+
     ]
 
     # Corrected line for extracting unique categories
@@ -76,37 +137,100 @@ def game_details(request):
     return render(request, 'FamusApp/game_details.html')
 
 def game_detail(request, slug):
-        Argames = [
+    Argames = [
         {
             'name': 'Pac-Man',
             'category': 'Classic Arcade',
             'image': 'images/PacMan.jpg',
-            'slug': 'pacman'
+            'slug': 'pacman',
+            'is_external': False
         },
         {
             'name': 'Asteroids',
             'category': 'Classic Arcade',
             'image': 'images/asteroids.jpg',
-            'slug': 'asteroids'
+            'slug': 'asteroids',
+            'is_external': False
         },
         {
             'name': 'Tetris',
             'category': 'Puzzle',
             'image': 'images/tetris.jpg',
-            'slug': 'tetris'
+            'slug': 'tetris',
+            'is_external': False
         },
         {
             'name': 'Space Invaders',
             'category': 'Classic Shooter',
             'image': 'images/SpaceInvaders.jpg',
-            'slug': 'space_invaders'
+            'slug': 'space_invaders',
+            'is_external': False
         },
+        {
+            'name': 'Bubble Tower 3D',
+            'category': '3D Puzzle',
+            'image': 'images/3Dteasers/BubbleTower.jpg',
+            'external_link': 'https://play.famobi.com/bubble-tower-3d',
+            'is_external': True
+        },
+        {
+            'name': 'CannonBalls',
+            'category': '3D',
+            'image': 'images/3Dteasers/CannonBalls.jpg',
+            'external_link': 'https://play.famobi.com/cannon-balls-3d',
+            'is_external': True
+        },
+        {
+            'name': 'Solitaire Klondike',
+            'category': 'Card Game',
+            'image': 'images/3Dteasers/SolitaireKlondike.jpg',
+            'external_link': 'https://play.famobi.com/solitaire-klondike',
+            'is_external': True
+        },
+        {
+            'name': '8 Ball Billiards Classic',
+            'category': 'Sports',
+            'image': 'images/3Dteasers/8BallBilliardsClassic.jpg',
+            'external_link': 'https://play.famobi.com/8-ball-billiards-classic',
+            'is_external': True
+        },
+        {
+            'name': 'Rising Squares',
+            'category': 'Puzzle Arcade',
+            'image': 'images/3Dteasers/RisingSquares.jpg',
+            'external_link': 'https://play.famobi.com/rising-squares',
+            'is_external': True
+        },
+        {
+            'name': 'Block Painter',
+            'category': 'Creative Puzzle',
+            'image': 'images/3Dteasers/BlockPainter.jpg',
+            'external_link': 'https://play.famobi.com/block-painter',
+            'is_external': True
+        },
+        {
+            'name': 'Speed Master',
+            'category': 'Racing Arcade',
+            'image': 'images/3Dteasers/SpeedMaster.jpg',
+            'external_link': 'https://play.famobi.com/speed-master',
+            'is_external': True
+        },
+        {
+            'name': 'Crazy Caves',
+            'category': 'Adventure Arcade',
+            'image': 'images/3Dteasers/CrazyCaves.jpg',
+            'external_link': 'https://play.famobi.com/crazy-caves',
+            'is_external': True
+        },
+
+        
+        
     ]
     # Retrieve the game based on the slug
-        game = next((item for item in Argames if item['slug'] == slug), None)
-        if not game:
-            return render(request, '404.html', status=404)
-        return render(request, 'FamusApp/game_detail.html', {'game': game})
+    game = next((item for item in Argames if item['slug'] == slug), None)
+    if not game:
+        return render(request, '404.html', status=404)
+    return render(request, 'FamusApp/game_detail.html', {'game': game})
 
 # About Page
 def about(request):
