@@ -385,12 +385,17 @@ Header Style
   border: transparent;
   letter-spacing: .25px;
 }
+/* 
+---------------------------------------------
+Header Style
+--------------------------------------------- 
 
 .header-area .main-nav .nav li:last-child a {
   background-color: #ee626b;
   text-transform: uppercase;
   font-weight: 500;
 }
+  */
 
 .header-area .main-nav .nav li:last-child:hover a {
   background-color: #ee626b;

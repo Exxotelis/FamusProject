@@ -13,6 +13,10 @@ urlpatterns = [
     path('tetris/', views.tetris_view, name='tetris'),
     path('space_invaders/', views.space_invaders, name='space_invaders'),
     path('game_details', views.game_details, name='game_details'),
+
+    path('about/', views.about, name='about'),
+    path('privacy-policy/', views.privacy_policy, name='privacy_policy'),
+    path('terms-of-service/', views.terms_of_service, name='terms_of_service'),
     path('<slug:slug>/', views.game_detail, name='game_detail'),  # Direct game detail page without /games/
 
 

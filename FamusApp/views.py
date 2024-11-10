@@ -108,3 +108,15 @@ def game_detail(request, slug):
             return render(request, '404.html', status=404)
         return render(request, 'FamusApp/game_detail.html', {'game': game})
 
+# About Page
+def about(request):
+    return render(request, 'FamusApp/about.html')
+
+# Privacy Policy Page
+def privacy_policy(request):
+    return render(request, 'FamusApp/privacy_policy.html')
+
+# Terms of Service Page
+def terms_of_service(request):
+    return render(request, 'FamusApp/terms_of_service.html')
+

@@ -207,7 +207,8 @@ document.getElementById("play").addEventListener("click", function game() {
 	document.querySelector(".grid").addEventListener("touchstart", startTouch, false);
 	document.querySelector(".grid").addEventListener("touchmove", moveTouch, false);
   
-  
+	document.getElementById('logo').style.display = 'none';
+
 
 // When Pac-Man eats a Pac-Dot
 	function pacDotEaten() {

@@ -1,0 +1,179 @@
+
+{% extends 'FamusApp/base.html' %}
+{% load static %}
+{% block title %}About Us | Famus Game Arcade{% endblock %}
+
+{% block meta_description %}
+<meta name="description" content="Discover Famus Game Arcade, your ultimate destination for online gaming. Play popular games, explore diverse genres, and enjoy a seamless gaming experience.">
+{% endblock %}
+
+
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover Famus Game Arcade, your ultimate destination for online gaming. Play popular games, explore diverse genres, and enjoy a seamless gaming experience.">
+    <meta name="keywords" content="Famus Game Arcade, online games, popular games, arcade, gaming experience">
+      
+    {% endblock %}
+{% block content %}
+<div class="page-heading header-text">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>About Us - Famus Gaming Arcade</h1>
+                <span class="breadcrumb"><a href="{% url 'home' %}">Home</a> > About Us</span>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="container">
+<!-- ***** Introduction Section ***** -->
+ <!-- ***** Introduction Section ***** -->
+<section id="introduction" class="my-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Text Section -->
+            <div class="col-lg-6">
+                <div class="caption header-text">
+                    <h2 class="display-4 text-primary">Welcome to Famus Game Arcade</h2>
+                    <h2>Your Ultimate Arcade Playground!</h2>
+                    <p>Famus Game Arcade is your go-to online platform for the most exciting and popular games. Our mission is to provide gamers of all ages and interests with an engaging, entertaining, and seamless gaming experience.</p>
+                </div>
+            </div>
+            <!-- Image Section -->
+            <div class="col-lg-6">
+                <div class="right-image">
+                    <img src="{% static 'images/Game-Collection/7.jpg' %}" alt="Famus Game Arcade" class="img-fluid w-75 rounded shadow">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- ***** Games Collection Section ***** -->
+<section id="games-collection" class="my-5 bg-light py-5">
+    <div class="container text-center">
+        <h2 class="display-4 text-secondary">Our Game Collection</h2>
+        <p class="lead">We offer a wide range of games across various genres, ensuring there’s something for everyone. From action-packed adventures to mind-bending puzzles, Famus Game Arcade is built to deliver hours of enjoyment.</p>
+        <p class="mb-4">With new games added regularly, you'll always find fresh content to explore. Dive into popular games or discover hidden gems – all in one place.</p>
+        
+        <!-- Example of game collection images -->
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card shadow-lg">
+                    <img src="{% static 'images/Game-Collection/5.jpg' %}" class="card-img-top" alt="Game 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Action Adventure</h5>
+                        <p class="card-text">A thrilling journey through action-packed challenges. Perfect for adrenaline junkies!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card shadow-lg">
+                    <img src="{% static 'images/Game-Collection/6.jpg' %}" class="card-img-top" alt="Game 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Puzzle Challenge</h5>
+                        <p class="card-text">Test your mind with these tricky puzzles. A perfect game for strategy lovers!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card shadow-lg">
+                    <img src="{% static 'images/Game-Collection/4.jpg' %}" class="card-img-top" alt="Game 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Multiplayer Madness</h5>
+                        <p class="card-text">Connect with friends and compete in exciting multiplayer challenges.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ***** Vision Section ***** -->
+<section id="our-vision" class="my-5 text-center">
+    <div class="container">
+        <h2 class="display-4 text-primary">Our Vision</h2>
+        <p class="lead">Our vision at Famus Game Arcade is to create a global gaming community where everyone can come together to play, compete, and connect. We are committed to fostering a positive environment for gamers and to bringing people together through shared experiences.</p>
+    </div>
+</section>
+
+<!-- ***** Accessibility Section ***** -->
+<section id="features" class="my-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Image Section (left side) -->
+            <div class="col-lg-6">
+                <div class="left-image">
+                    <img src="{% static 'images/Game-Collection/2.jpg' %}" alt="Platform Accessibility" class="img-fluid rounded shadow">
+                </div>
+            </div>
+            <!-- Text Section (right side) -->
+            <div class="col-lg-6">
+                <div class="caption header-text">
+                    <h6>Accessibility and Features</h6>
+                    <h2 class="display-4 text-primary">Designed for Seamless Gaming</h2>
+                    <p>At Famus Game Arcade, we believe gaming should be accessible to everyone. Our platform is designed for easy navigation, quick loading times, and optimized performance across devices. Whether you're on desktop, tablet, or mobile, Famus Game Arcade provides a smooth gaming experience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ***** Advertising Section ***** -->
+<section id="advertising" class="my-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Text Section (left side) -->
+            <div class="col-lg-6">
+                <div class="caption header-text">
+                    <h6>Advertising and Partnerships</h6>
+                    <h2 class="display-4 text-primary">Collaborate with Famus Game Arcade</h2>
+                    <p>Famus Game Arcade is proud to partner with advertisers who support our vision of delivering top-quality gaming content. Our platform welcomes opportunities to collaborate with brands that resonate with our gaming audience. Contact us to learn more about advertising opportunities on Famus Game Arcade.</p>
+                </div>
+            </div>
+            <!-- Image Section (right side) -->
+            <div class="col-lg-6">
+                <div class="right-image">
+                    <img src="{% static 'images/Game-Collection/1.jpg' %}" alt="Advertising Opportunities" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- ***** Community Section ***** -->
+<section id="community" class="my-5 bg-light py-5">
+    <div class="container text-center">
+        <h2 class="display-4 text-secondary">Join Our Community</h2>
+        <p class="lead">We value the feedback of our players and strive to create a platform that evolves with their needs. Join the Famus Game Arcade community to share your thoughts, request new features, or simply connect with fellow gamers. Your feedback helps us improve and continue to offer a platform you love.</p>
+        <a href="/contact" class="btn btn-primary btn-lg">Contact Us</a>
+    </div>
+</section>
+
+
+
+    <!-- AdSense placeholder (replace with actual AdSense code) -->
+    <section id="ads" class="my-4">
+        <h2>Sponsored Ads</h2>
+        <p>Support Famus Game Arcade by exploring our sponsored content below. These ads help us keep our games free and accessible for everyone!</p>
+        <!-- Example AdSense code -->
+        <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="auto"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script> -->
+    </section>
+</div>
+{% endblock %}
+

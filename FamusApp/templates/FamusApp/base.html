@@ -18,6 +18,26 @@
     <meta name="twitter:image" content="{% static 'images/logo/famuslogo7.png' %}">
     <meta name="twitter:creator" content="@yourtwitterhandle">
 
+    <script type="application/ld+json">
+        {
+           "@context": "https://schema.org",
+           "@type": "Organization",
+           "name": "Famus Game Arcade",
+           "url": "https://yourwebsite.com",
+           "sameAs": [
+              "https://www.facebook.com/yourprofile",
+              "https://www.twitter.com/yourprofile"
+           ],
+           "logo": "https://likefamus.com/static/images/famuslogo7.png",
+           "contactPoint": {
+              "@type": "ContactPoint",
+              "email": "support@likefamus.com",
+              "contactType": "Customer Service"
+           }
+        }
+        </script>
+        
+
     <title>{% block title %} Famus Gaming Arcade {% endblock %}</title>
 
     <!-- Bootstrap core CSS -->
@@ -63,6 +83,7 @@
                             <li><a href="{% url 'home' %}" class="active">Home</a></li>
                             <li><a href="{% url 'games' %}">Gallery</a></li>
                             <li><a href="{% url 'game_tips' %}">Game Tips</a></li>
+                            <li><a href="{% url 'about' %}">About</a></li>
                             <li><a href="{% url 'contact' %}">Contact Us</a></li>
                         </ul>
                         <a class="menu-trigger">
@@ -93,11 +114,15 @@
         </script>
     </div>
 
-    <!-- ***** Footer Area Start ***** -->
+ <!-- ***** Footer Area Start ***** -->
     <footer>
         <div class="container">
             <div class="col-lg-12">
-                <p>Copyright © 2048 Famus Games. All rights reserved. &nbsp;&nbsp; <a rel="nofollow" href="https://likefamus.com" target="_blank">Design: VorinVista</a></p>
+                <p>Copyright © 2048 Famus Games. All rights reserved. &nbsp;&nbsp; <br>
+                    <a rel="nofollow" href="https://likefamus.com" target="_blank">Design: VorinVista</a> &nbsp;&nbsp; | 
+                    <a href="/privacy-policy" target="_blank">Privacy Policy</a> &nbsp;&nbsp; | 
+                    <a href="/terms-of-service" target="_blank">Terms of Service</a>
+                </p>
             </div>
         </div>
     </footer>
