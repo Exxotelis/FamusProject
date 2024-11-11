@@ -100,7 +100,146 @@ def games(request):
             'external_link': 'https://play.famobi.com/crazy-caves',
             'is_external': True
         },
-
+        {
+            'name': 'Mahjong3d',
+            'category': 'Puzzle',
+            'image': 'images/3Dteasers/Mahjong3d.jpg',
+            'external_link': 'https://play.famobi.com/mahjong-3d',
+            'is_external': True
+        },
+        {
+            'name': 'ElementBlocks',
+            'category': 'Puzzle',
+            'image': 'images/3Dteasers/ElementBlocks.jpg',
+            'external_link': 'https://play.famobi.com/element-blocks',
+            'is_external': True
+        },
+        {
+            'name': 'BlocksPuzzleZoo',
+            'category': 'Puzzle',
+            'image': 'images/3Dteasers/BlocksPuzzleZoo.jpg',
+            'external_link': 'https://play.famobi.com/blocks-puzzle-zoo',
+            'is_external': True
+        },
+        {
+            'name': '1000Blocks',
+            'category': 'Puzzle',
+            'image': 'images/3Dteasers/1000Blocks.jpg',
+            'external_link': 'https://play.famobi.com/1000-blocks',
+            'is_external': True
+        },
+                {
+            'name': 'PipePuzzle',
+            'category': 'Puzzle',
+            'image': 'images/3Dteasers/PipePuzzle.jpg',
+            'external_link': 'https://play.famobi.com/pipe-puzzle',
+            'is_external': True
+        },
+        {
+            'name': 'EmojiFun',
+            'category': 'Puzzle',
+            'image': 'images/3Dteasers/EmojiFun.jpg',
+            'external_link': 'https://play.famobi.com/emoji-fun',
+            'is_external': True
+        },
+        {
+            'name': 'FunnyFred',
+            'category': 'Puzzle',
+            'image': 'images/3Dteasers/FunnyFred.jpg',
+            'external_link': 'https://play.famobi.com/funny-fred',
+            'is_external': True
+        },
+        {
+            'name': 'ParkingJam',
+            'category': 'Puzzle',
+            'image': 'images/3Dteasers/ParkingJam.jpg',
+            'external_link': 'https://play.famobi.com/parking-jam',
+            'is_external': True
+        },
+        {
+            'name': 'KumbaKarate1',
+            'category': 'Sports',
+            'image': 'images/3Dteasers/KumbaKarate1.jpg',
+            'external_link': 'https://play.famobi.com/kumba-karate',
+            'is_external': True
+        },
+        {
+            'name': 'SpeedBilliards',
+            'category': 'Sports',
+            'image': 'images/3Dteasers/SpeedBilliards.jpg',
+            'external_link': 'https://play.famobi.com/speed-pool-king',
+            'is_external': True
+        },
+        {
+            'name': 'KatanaFruits',
+            'category': 'Adventure Arcade',
+            'image': 'images/3Dteasers/KatanaFruits.jpg',
+            'external_link': 'https://play.famobi.com/katana-fruits',
+            'is_external': True
+        },        
+        {
+            'name': 'Sheepop',
+            'category': 'Classic Arcade',
+            'image': 'images/3Dteasers/Sheepop.jpg',
+            'external_link': 'https://play.famobi.com/sheepop',
+            'is_external': True
+        },
+        {
+            'name': 'RabbitPunch',
+            'category': 'Classic Arcade',
+            'image': 'images/3Dteasers/RabbitPunch.jpg',
+            'external_link': 'https://play.famobi.com/rabbit-punch',
+            'is_external': True
+        },
+        {
+            'name': 'Knightower',
+            'category': 'Classic Arcade',
+            'image': 'images/3Dteasers/Knightower.jpg',
+            'external_link': 'https://play.famobi.com/knightower',
+            'is_external': True
+        },
+        {
+            'name': 'SpectTeaser',
+            'category': '3D',
+            'image': 'images/3Dteasers/SpectTeaser.jpg',
+            'external_link': 'https://play.famobi.com/spect',
+            'is_external': True
+        },        
+        {
+            'name': 'BurgerMaker',
+            'category': 'Classic Arcade',
+            'image': 'images/3Dteasers/BurgerMaker.jpg',
+            'external_link': 'https://play.famobi.com/burger-maker',
+            'is_external': True
+        },
+        {
+            'name': 'Bananamania',
+            'category': 'Classic Arcade',
+            'image': 'images/3Dteasers/Bananamania.jpg',
+            'external_link': 'https://play.famobi.com/bananamania',
+            'is_external': True
+        },
+        {
+            'name': 'GoldMine',
+            'category': 'Classic Arcade',
+            'image': 'images/3Dteasers/GoldMine.jpg',
+            'external_link': 'https://play.famobi.com/gold-mine',
+            'is_external': True
+        },
+        {
+            'name': 'TowerMania',
+            'category': '3D',
+            'image': 'images/3Dteasers/TowerMania.jpg',
+            'external_link': 'https://play.famobi.com/tower-mania',
+            'is_external': True
+        },        
+        {
+            'name': 'TimberMan',
+            'category': 'Classic Arcade',
+            'image': 'images/3Dteasers/TimberMan.jpg',
+            'external_link': 'https://play.famobi.com/timber-man',
+            'is_external': True
+        },
     ]
 
     # Corrected line for extracting unique categories
@@ -222,9 +361,146 @@ def game_detail(request, slug):
             'external_link': 'https://play.famobi.com/crazy-caves',
             'is_external': True
         },
-
-        
-        
+        {
+            'name': 'Mahjong3d',
+            'category': 'Puzzle',
+            'image': 'images/3Dteasers/Mahjong3d.jpg',
+            'external_link': 'https://play.famobi.com/mahjong-3d',
+            'is_external': True
+        },
+        {
+            'name': 'ElementBlocks',
+            'category': 'Puzzle',
+            'image': 'images/3Dteasers/ElementBlocks.jpg',
+            'external_link': 'https://play.famobi.com/element-blocks',
+            'is_external': True
+        },
+        {
+            'name': 'BlocksPuzzleZoo',
+            'category': 'Puzzle',
+            'image': 'images/3Dteasers/BlocksPuzzleZoo.jpg',
+            'external_link': 'https://play.famobi.com/blocks-puzzle-zoo',
+            'is_external': True
+        },
+        {
+            'name': '1000Blocks',
+            'category': 'Puzzle',
+            'image': 'images/3Dteasers/1000Blocks.jpg',
+            'external_link': 'https://play.famobi.com/1000-blocks',
+            'is_external': True
+        },
+                {
+            'name': 'PipePuzzle',
+            'category': 'Puzzle',
+            'image': 'images/3Dteasers/PipePuzzle.jpg',
+            'external_link': 'https://play.famobi.com/pipe-puzzle',
+            'is_external': True
+        },
+        {
+            'name': 'EmojiFun',
+            'category': 'Puzzle',
+            'image': 'images/3Dteasers/EmojiFun.jpg',
+            'external_link': 'https://play.famobi.com/emoji-fun',
+            'is_external': True
+        },
+        {
+            'name': 'FunnyFred',
+            'category': 'Puzzle',
+            'image': 'images/3Dteasers/FunnyFred.jpg',
+            'external_link': 'https://play.famobi.com/funny-fred',
+            'is_external': True
+        },
+        {
+            'name': 'ParkingJam',
+            'category': 'Puzzle',
+            'image': 'images/3Dteasers/ParkingJam.jpg',
+            'external_link': 'https://play.famobi.com/parking-jam',
+            'is_external': True
+        },
+        {
+            'name': 'KumbaKarate1',
+            'category': 'Sports',
+            'image': 'images/3Dteasers/KumbaKarate1.jpg',
+            'external_link': 'https://play.famobi.com/kumba-karate',
+            'is_external': True
+        },
+        {
+            'name': 'SpeedBilliards',
+            'category': 'Sports',
+            'image': 'images/3Dteasers/SpeedBilliards.jpg',
+            'external_link': 'https://play.famobi.com/speed-pool-king',
+            'is_external': True
+        },
+        {
+            'name': 'KatanaFruits',
+            'category': 'Adventure Arcade',
+            'image': 'images/3Dteasers/KatanaFruits.jpg',
+            'external_link': 'https://play.famobi.com/katana-fruits',
+            'is_external': True
+        },        
+        {
+            'name': 'Sheepop',
+            'category': 'Classic Arcade',
+            'image': 'images/3Dteasers/Sheepop.jpg',
+            'external_link': 'https://play.famobi.com/sheepop',
+            'is_external': True
+        },
+        {
+            'name': 'RabbitPunch',
+            'category': 'Classic Arcade',
+            'image': 'images/3Dteasers/RabbitPunch.jpg',
+            'external_link': 'https://play.famobi.com/rabbit-punch',
+            'is_external': True
+        },
+        {
+            'name': 'Knightower',
+            'category': 'Classic Arcade',
+            'image': 'images/3Dteasers/Knightower.jpg',
+            'external_link': 'https://play.famobi.com/knightower',
+            'is_external': True
+        },
+        {
+            'name': 'SpectTeaser',
+            'category': '3D',
+            'image': 'images/3Dteasers/SpectTeaser.jpg',
+            'external_link': 'https://play.famobi.com/spect',
+            'is_external': True
+        },        
+        {
+            'name': 'BurgerMaker',
+            'category': 'Classic Arcade',
+            'image': 'images/3Dteasers/BurgerMaker.jpg',
+            'external_link': 'https://play.famobi.com/burger-maker',
+            'is_external': True
+        },
+        {
+            'name': 'Bananamania',
+            'category': 'Classic Arcade',
+            'image': 'images/3Dteasers/Bananamania.jpg',
+            'external_link': 'https://play.famobi.com/bananamania',
+            'is_external': True
+        },
+        {
+            'name': 'GoldMine',
+            'category': 'Classic Arcade',
+            'image': 'images/3Dteasers/GoldMine.jpg',
+            'external_link': 'https://play.famobi.com/gold-mine',
+            'is_external': True
+        },
+        {
+            'name': 'TowerMania',
+            'category': '3D',
+            'image': 'images/3Dteasers/TowerMania.jpg',
+            'external_link': 'https://play.famobi.com/tower-mania',
+            'is_external': True
+        },        
+        {
+            'name': 'TimberMan',
+            'category': 'Classic Arcade',
+            'image': 'images/3Dteasers/TimberMan.jpg',
+            'external_link': 'https://play.famobi.com/timber-man',
+            'is_external': True
+        },
     ]
     # Retrieve the game based on the slug
     game = next((item for item in Argames if item['slug'] == slug), None)
