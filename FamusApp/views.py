@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from .models import Product
+from blog.models import Post
 
 
 def home(request):
+    posts = Post.objects.all().order_by('-created_at')
     
-    return render(request, 'FamusApp/home.html')
+    return render(request, 'FamusApp/home.html', {'posts':posts})
 
 def contact(request):
 

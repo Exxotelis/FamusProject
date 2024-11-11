@@ -1,13 +1,55 @@
-<!-- blog/templates/blog/post_detail.html -->
 {% extends 'FamusApp/base.html' %}
+{% load static %}
+
+<title>{% block title %} Blog Posts | Famus Gaming Arcade {% endblock %}</title>
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+{% endblock %}
 
 {% block content %}
+<div class="page-heading header-text">
     <div class="container">
-        <h1>{{ post.title }}</h1>
-        <p><em>Posted on: {{ post.created_at|date:"F j, Y" }}</em></p>
-        <div class="post-content">
-            <p>{{ post.content }}</p>
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Blog Posts Game Tips - Famus Games Arcade</h1>
+                <span class="breadcrumb"><a href="{% url 'home' %}">Home</a> > <a href="#">Blog Posts</a> </span>
+            </div>
         </div>
-        <a href="{% url 'post_list' %}" class="btn btn-primary">Back to Blog</a>
     </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>Latest Posts</h1>
+            
+        </div>
+    </div>
+</div>
+
+<div class="row posts-box">
+    {% for post in posts %}
+    <div class="col-lg-3 col-md-6 align-self-center mb-30 post-card">
+        <div class="post-item-wrapper">
+            <div class="post-item">
+                <h2><a href="{% url 'blog:post_detail' slug=post.slug %}" class="post-title">{{ post.title }}</a></h2>
+                
+                {% if post.image %}
+                <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-image-detail">
+                {% endif %}
+                
+            </div>
+            <div class="post-content">
+                <p><em>Posted on: {{ post.created_at|date:"F j, Y" }}</em></p>
+                <p>{{ post.content|slice:":100" }}...</p>
+                <a href="{% url 'blog:post_detail' slug=post.slug %}" class="read-more">Read more</a>
+            </div>
+        </div>
+        
+    </div>
+    {% empty %}
+    <p>No posts available.</p>
+    {% endfor %}
+</div>
+
 {% endblock %}

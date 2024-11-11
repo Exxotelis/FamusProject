@@ -46,10 +46,11 @@
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
-    <link rel="stylesheet" href="{% static 'css/gaming.css' %}">
-    
+    <link rel="stylesheet" href="{% static 'css/gaming.css' %}">   
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">      
     {% block head %}
     {% endblock %}
+    
 
 </head>
 
@@ -82,9 +83,10 @@
                         <ul class="nav">
                             <li><a href="{% url 'home' %}" class="active">Home</a></li>
                             <li><a href="{% url 'games' %}">Gallery</a></li>
-                            <li><a href="{% url 'game_tips' %}">Game Tips</a></li>
+                            <li><a href="{% url 'blog:post_list' %}">Blog</a></li>
                             <li><a href="{% url 'about' %}">About</a></li>
                             <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                            
                         </ul>
                         <a class="menu-trigger">
                             <span>Menu</span>

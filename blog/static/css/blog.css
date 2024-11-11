@@ -1,0 +1,89 @@
+/* Styling for the posts-box container */
+.posts-box {
+    padding-left: 20px;
+    padding-right: 20px; 
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Styling each post card */
+.post-card .post-item-wrapper {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.post-card {
+    
+    flex: 1 1 250px;
+    max-width: 420px;
+}
+
+/* Post title styling */
+.post-title {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limits title to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+}
+
+/* Image styling for posts */
+.post-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Post content styling */
+.post-content {
+    padding: 10px;
+    flex-grow: 1;
+}
+
+.post-content p {
+    font-size: 0.9em;
+    color: #555;
+    padding-left: 10px;
+}
+
+/* "Read more" link styling */
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #0366d6;
+    padding-left: 10px;
+}
+
+.read-more:hover {
+    color: #024ea2;
+}
+
+@media (max-width: 768px) {
+    .posts-box .col-lg-3,
+    .posts-box .col-md-6,
+    .posts-box .col-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .posts-box .item {
+        margin-bottom: 20px;
+    }
+}
