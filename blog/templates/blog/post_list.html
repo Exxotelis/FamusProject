@@ -1,0 +1,13 @@
+<!-- blog/templates/blog/post_detail.html -->
+{% extends 'FamusApp/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1>{{ post.title }}</h1>
+        <p><em>Posted on: {{ post.created_at|date:"F j, Y" }}</em></p>
+        <div class="post-content">
+            <p>{{ post.content }}</p>
+        </div>
+        <a href="{% url 'post_list' %}" class="btn btn-primary">Back to Blog</a>
+    </div>
+{% endblock %}
