@@ -8,7 +8,7 @@ class Post(models.Model):
     content = models.TextField()
     slug = models.SlugField(unique=True)  # Ensure this field is not empty
     created_at = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(upload_to='posts/', null=True, blank=True)
+    image = models.ImageField(upload_to='images/', null=True, blank=True)
 
     def __str__(self):
         return self.title
