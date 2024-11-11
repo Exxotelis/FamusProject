@@ -1,4 +1,4 @@
-# myapp/sitemaps.py
+# sitemaps.py
 from django.contrib.sitemaps import Sitemap
 from django.urls import reverse
 from blog.models import Post
@@ -11,10 +11,13 @@ class PostSitemap(Sitemap):
         return Post.objects.all()
     
     def lastmod(self, obj):
-        return obj.updated_at
+        return obj.updated_at  # Ensure 'updated_at' is a valid field in your Post model
+
 class StaticViewSitemap(Sitemap):
+    priority = 0.5
+    changefreq = 'monthly'
+
     def items(self):
-        
         return [
             'home',      
             'about',     
