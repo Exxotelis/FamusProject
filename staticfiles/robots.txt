@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /admin/
 Allow: /static/
-Sitemap: https://famusproject-production-8acb.up.railway.app/sitemap
+Sitemap: https://likefamus.com/sitemap
