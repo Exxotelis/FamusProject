@@ -1,13 +1,17 @@
-from django.shortcuts import render, render_to_response
-from django.template import RequestContext
+from django.shortcuts import render
 from blog.models import Post
-
+from django.http import HttpResponse
 
 def robots(request):
-    template = 'robots.txt'
-    context = {}
-    return render_to_response(template, context,
-                           context_instance=RequestContext(request))
+    robots_txt = """
+    User-agent: *
+    Disallow: /admin/
+    Allow: /static/
+    Sitemap: http://localhost:8080/sitemap.xml
+    Sitemap: https://likefamus.com/sitemap.xml
+    """
+    return HttpResponse(robots_txt, content_type="text/plain")
+
 
 
 
