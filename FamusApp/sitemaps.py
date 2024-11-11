@@ -1,14 +1,24 @@
 # myapp/sitemaps.py
 from django.contrib.sitemaps import Sitemap
 from django.urls import reverse
+from blog.models import Post
 
+class PostSitemap(Sitemap):
+    changefreq = "weekly" 
+    priority = 0.8 
+
+    def items(self):
+        return Post.objects.all()
+    
+    def lastmod(self, obj):
+        return obj.updated_at
 class StaticViewSitemap(Sitemap):
     def items(self):
-        # List all static URLs you want to include in the sitemap
+        
         return [
-            'home',      # Name of the URL pattern for your homepage
-            'about',     # Name of the URL pattern for your about page
-            'contact',   # Name of the URL pattern for your contact page
+            'home',      
+            'about',     
+            'contact',  
             'games', 
             'asteroids',
             'game_details',
