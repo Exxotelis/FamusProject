@@ -6,15 +6,18 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Famus Gaming Arcade - The ultimate gaming experience with a wide variety of games to play, tips, and more.">
+    <meta name="description"
+        content="Famus Gaming Arcade - The ultimate gaming experience with a wide variety of games to play, tips, and more.">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Famus Gaming Arcade">
-    <meta property="og:description" content="Famus Gaming Arcade offers an exciting collection of online games, game tips, and a platform to connect with fellow gamers.">
+    <meta property="og:description"
+        content="Famus Gaming Arcade offers an exciting collection of online games, game tips, and a platform to connect with fellow gamers.">
     <meta property="og:image" content="{% static 'images/logo/famuslogo7.png' %}">
     <meta property="og:url" content="{{ request.build_absolute_uri }}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Famus Gaming Arcade">
-    <meta name="twitter:description" content="Explore Famus Gaming Arcade for the best gaming tips, gallery, and experience the thrill of games.">
+    <meta name="twitter:description"
+        content="Explore Famus Gaming Arcade for the best gaming tips, gallery, and experience the thrill of games.">
     <meta name="twitter:image" content="{% static 'images/logo/famuslogo7.png' %}">
     <meta name="twitter:creator" content="@yourtwitterhandle">
     <!-- Google Site Verification -->
@@ -22,8 +25,8 @@
 
     <!-- Google AdSense Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9816738812564850"
-            crossorigin="anonymous"></script>
-    
+        crossorigin="anonymous"></script>
+
 
     <script type="application/ld+json">
         {
@@ -46,7 +49,7 @@
         }
         </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
+
 
     <title>{% block title %} Famus Gaming Arcade {% endblock %}</title>
 
@@ -56,11 +59,11 @@
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
-    <link rel="stylesheet" href="{% static 'css/gaming.css' %}">   
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}">      
+    <link rel="stylesheet" href="{% static 'css/gaming.css' %}">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     {% block head %}
     {% endblock %}
-    
+
 
 </head>
 
@@ -86,7 +89,8 @@
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="{% url 'home' %}" class="logo">
-                            <img src="{% static 'images/logo/famuslogo7.png' %}" alt="Famus Gaming Arcade Logo" style="width: 158px;">
+                            <img src="{% static 'images/logo/famuslogo7.png' %}" alt="Famus Gaming Arcade Logo"
+                                style="width: 158px;">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
@@ -96,7 +100,7 @@
                             <li><a href="{% url 'blog:post_list' %}">Blog</a></li>
                             <li><a href="{% url 'about' %}">About</a></li>
                             <li><a href="{% url 'contact' %}">Contact Us</a></li>
-                            
+
                         </ul>
                         <a class="menu-trigger">
                             <span>Menu</span>
@@ -113,33 +117,60 @@
     {% block content %}
     {% endblock %}
 
+    
     <!-- Google AdSense Ad Below Content -->
     <div class="ad-container">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <ins class="adsbygoogle"
-        style="display:block; text-align:center;"
-        data-ad-client="ca-pub-9816738812564850"
-        data-ad-slot="f08c47fec0942fa0"
-        data-ad-format="auto"></ins>
+        <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-client="ca-pub-9816738812564850"
+            data-ad-slot="f08c47fec0942fa0" data-ad-format="auto"></ins>
 
         <script>
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
     </div>
 
- <!-- ***** Footer Area Start ***** -->
+    
+
+    <!-- ***** Footer Area Start ***** -->
     <footer>
+        <div class="social-links-warp">
+            <div class="container">
+                <div class="social-links d-flex justify-content-center">
+                    <!-- YouTube -->
+                    <a href="https://www.youtube.com/channel/UC0F0MC65cC44iciAwSCgusA" target="_blank" class="youtube" title="YouTube">
+                        <i class="fab fa-youtube"></i><span>YouTube</span>
+                    </a>
+        
+                    <!-- Pinterest -->
+                    <a href="https://br.pinterest.com/likefamus/" target="_blank" class="pinterest me-3" title="Pinterest">
+                        <i class="fab fa-pinterest"></i>
+                        <span>Pinterest</span>
+                    </a>
+        
+                    <!-- TikTok -->
+                    <a href="https://www.tiktok.com/tag/likefamus" target="_blank" class="tiktok" title="TikTok">
+                        <i class="fab fa-tiktok"></i><span>TikTok</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        
         <div class="container">
-            <div class="col-lg-12">
-                <p>Copyright © 2048 Famus Games. All rights reserved. &nbsp;&nbsp; <br>
-                    <a rel="nofollow" href="https://likefamus.com" target="_blank">Design: VorinVista</a> &nbsp;&nbsp; | 
-                    <a href="/privacy-policy" target="_blank">Privacy Policy</a> &nbsp;&nbsp; | 
-                    <a href="/terms-and-conditions" target="_blank">Terms and Conditions</a>
-                </p>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>
+                        Copyright © 2025 Famus Games. All rights reserved.
+                        <a rel="nofollow" href="https://likefamus.com" target="_blank">Design: VorinVista</a> |
+                        <a href="/privacy-policy" target="_blank">Privacy Policy</a> |
+                        <a href="/terms-and-conditions" target="_blank">Terms and Conditions</a>
+                    </p>
+                </div>
             </div>
         </div>
     </footer>
     <!-- ***** Footer Area End ***** -->
+
 
     <!-- Scripts -->
     <!-- Bootstrap core JavaScript -->
