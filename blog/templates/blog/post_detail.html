@@ -27,10 +27,10 @@
         </div>
 
         <!-- Post Image -->
-        {% if post.image %}
+        {% if post.image_data %}
         <div class="row mb-4">
             <div class="col-12">
-                <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid rounded post-image-detail">
+                <img src="{{ post.image_data.url }}" alt="{{ post.title }}" class="img-fluid rounded post-image-detail">
             </div>
         </div>
         {% endif %}
