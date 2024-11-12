@@ -10,9 +10,14 @@ def robots(request):
     Allow: /static/
     Sitemap: http://localhost:8080/sitemap.xml
     Sitemap: https://likefamus.com/sitemap.xml
-    Ads: https://likefamus.com/ads.txt
+    
     """
     return HttpResponse(robots_txt, content_type="text/plain")
+
+def ads_txt_view(request):
+    ads_txt_content  = "google.com, pub-9816738812564850, DIRECT, f08c47fec0942fa0"
+
+    return HttpResponse(ads_txt_content, content_type="text/plain")
 
 
 

@@ -35,6 +35,7 @@ urlpatterns = [
     path('terms-and-conditions/', views.terms_of_service, name='terms_of_service'),
     path('<slug:slug>/', views.game_detail, name='game_detail'),  # Direct game detail page without /games/
 
+    path('ads.txt', views.ads_txt_view),
     path('robots.txt', lambda request: HttpResponse(
         "User-agent: *\nDisallow: /admin/\nAllow: /static/\nSitemap: http://localhost:8080/sitemap.xml", 
         content_type="text/plain")),
