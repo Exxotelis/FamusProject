@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from blog.models import Post
 from django.http import HttpResponse
+from django.core.paginator import Paginator
 
 def robots(request):
     robots_txt = """
@@ -16,9 +17,22 @@ def robots(request):
 
 
 def home(request):
-    posts = Post.objects.all().order_by('-created_at')
-    
-    return render(request, 'FamusApp/home.html', {'posts':posts})
+        """Retrieve a list of posts and paginate them for easier navigation."""
+        posts = Post.objects.all().order_by('-created_at')
+        paginator = Paginator(posts, 4)  # Show 5 posts per page
+
+        # Get the page number from the query parameters
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+
+        context = {
+            'posts': posts,
+            'page_obj': page_obj,
+            'paginator': paginator,
+            'page_number': page_number,
+        }
+        
+        return render(request, 'FamusApp/home.html', context)
 
 def contact(request):
 
