@@ -10,6 +10,7 @@ def robots(request):
     Allow: /static/
     Sitemap: http://localhost:8080/sitemap.xml
     Sitemap: https://likefamus.com/sitemap.xml
+    Ads: https://likefamus.com/ads.txt
     """
     return HttpResponse(robots_txt, content_type="text/plain")
 

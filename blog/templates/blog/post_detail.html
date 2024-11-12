@@ -39,7 +39,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="post-content">
-                    <p>{{ post.content }}</p>
+                    <p>{{ post.content|safe|linebreaks }}</p>
                 </div>
             </div>
         </div>
