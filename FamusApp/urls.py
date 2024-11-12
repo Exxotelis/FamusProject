@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
 from django.urls import path
 from FamusApp.sitemaps import PostSitemap, StaticViewSitemap
+from django.views.generic import TemplateView
 
 import logging
 logger = logging.getLogger(__name__)
@@ -40,6 +41,7 @@ urlpatterns = [
         "User-agent: *\nDisallow: /admin/\nAllow: /static/\nSitemap: http://localhost:8080/sitemap.xml", 
         content_type="text/plain")),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
+    path("home/", TemplateView.as_view(template_name="base.html"), name="home"),
 
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
