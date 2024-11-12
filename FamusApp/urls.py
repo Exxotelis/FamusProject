@@ -41,7 +41,7 @@ urlpatterns = [
         "User-agent: *\nDisallow: /admin/\nAllow: /static/\nSitemap: http://localhost:8080/sitemap.xml", 
         content_type="text/plain")),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
-    path("home/", TemplateView.as_view(template_name="base.html"), name="home"),
+    path("", TemplateView.as_view(template_name="base.html"), name="home"),
 
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
