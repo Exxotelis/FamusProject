@@ -245,14 +245,13 @@
     <div class="row">
         <div class="col-lg-12">
             <h1>Latest Posts</h1>
-
         </div>
     </div>
 </div>
 <div class="section trending">
     <div class="container">
         <div class="row posts-box">
-            {% for post in posts %}
+            {% for post in page_obj %}
                 <div class="col-lg-3 col-md-6 align-self-center mb-30 post-card">
                     <div class="post-item-wrapper">
                         <div class="post-item">
@@ -261,9 +260,10 @@
                                     {{ post.title }}
                                 </a>
                             </h2>
-                            {% if post.image %}
-                                <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-image">
+                            {% if post.image_data %}
+                                <img src="{{ post.image_data }}" alt="{{ post.title }}" class="post-image">
                             {% endif %}
+
                         </div>
                         <div class="post-content">
                             <p><em>Posted on: {{ post.created_at|date:"F j, Y" }}</em></p>
@@ -276,7 +276,23 @@
                 <p>No posts available.</p>
             {% endfor %}
         </div>
+        
+        <!-- Pagination Controls -->
+        <div class="pagination">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">First</a>
+                <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+            {% endif %}
+
+            <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">Next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+            {% endif %}
+        </div>
     </div>
 </div>
+
 
 {% endblock %}

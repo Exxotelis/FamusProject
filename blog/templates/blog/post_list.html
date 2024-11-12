@@ -22,6 +22,7 @@
     <div class="row">
         <div class="col-lg-12">
             <h1>Latest Posts</h1>
+
             
         </div>
     </div>
@@ -34,8 +35,8 @@
             <div class="post-item">
                 <h2><a href="{% url 'blog:post_detail' slug=post.slug %}" class="post-title">{{ post.title }}</a></h2>
                 
-                {% if post.image %}
-                <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-image-detail">
+                {% if post.image_data %}
+                <img src="{{ post.image_data }}" alt="{{ post.title }}" class="post-image">
                 {% endif %}
                 
             </div>
