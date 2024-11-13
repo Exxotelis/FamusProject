@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-+rr@9fd$hj5)5az7jra(5=lx(hg^9t=b%znuxtz4-_6%#diqsh
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
+    'compressor',
     'FamusApp',
     'blog',
 ]
@@ -53,6 +54,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.cache.UpdateCacheMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
 ]
 
 ROOT_URLCONF = 'FamusGames.urls'
@@ -129,6 +132,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'blog/static'),      # Static files for your blog app
 ]
 
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'FamusApp/static/images/') 
 
@@ -137,3 +143,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'FamusApp/static/images/')
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+COMPRESS_ENABLED = True
+

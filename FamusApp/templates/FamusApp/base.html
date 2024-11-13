@@ -53,6 +53,11 @@
 
     <title>{% block title %} Famus Gaming Arcade {% endblock %}</title>
 
+    {% block compress %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    {% endblock %}
+
+
     <!-- Bootstrap core CSS -->
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
