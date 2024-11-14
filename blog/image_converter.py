@@ -11,6 +11,6 @@ def convert_image_to_base64(image_path):
         return base64_data_url
 
 # Example usage
-image_path = "C:/Users/telis/Python/Images/Atari-50-The-first-console.jpg"
+image_path = "C:/Users/telis/Python/Images/post-4.jpg"
 base64_image = convert_image_to_base64(image_path)
 print(base64_image)  # This will print the base64 data URL
