@@ -536,10 +536,12 @@ def game_detail(request, slug):
             'is_external': True
         },
     ]
-    # Retrieve the game based on the slug
-    game = next((item for item in Argames if item['slug'] == slug), None)
+    # Retrieve the game based on the slug, using .get('slug') to prevent KeyError
+    game = next((item for item in Argames if item.get('slug') == slug), None)
     if not game:
         return render(request, '404.html', status=404)
+
+    # Render the game detail template if the game is found
     return render(request, 'FamusApp/game_detail.html', {'game': game})
 
 # About Page

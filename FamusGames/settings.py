@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-+rr@9fd$hj5)5az7jra(5=lx(hg^9t=b%znuxtz4-_6%#diqsh
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'compressor',
     'FamusApp',
     'blog',
+    'search',
 ]
 
 MIDDLEWARE = [
@@ -63,7 +64,9 @@ ROOT_URLCONF = 'FamusGames.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'FamusApp/templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'FamusApp/templates'),
+                 os.path.join(BASE_DIR, 'templates'),
+                 ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -145,4 +148,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'FamusApp/static/images/')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 COMPRESS_ENABLED = True
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://likefamus.com',  
+    'https://www.likefamus.com'  
+]
 

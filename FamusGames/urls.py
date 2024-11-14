@@ -26,14 +26,16 @@ sitemaps = {
 }
 
 urlpatterns = [
-    # other URL patterns
+    # Admin and app URLs
+    path('admin/', admin.site.urls),
+    path('', include('FamusApp.urls')),
+    path('blog/', include(('blog.urls', 'blog'), namespace='blog')),  # Include blog URLs with a namespace
+    path('search/', include('search.urls', namespace='search')), 
+
+    # Sitemap URL
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django-sitemap'),
 ]
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('FamusApp.urls')),
-    path('blog/', include('blog.urls', namespace='blog')),
-]
+# Serve media files in development
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

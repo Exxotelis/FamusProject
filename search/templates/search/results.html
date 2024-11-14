@@ -1,0 +1,11 @@
+<!-- search/results.html -->
+{% if results %}
+    <h2>Search Results:</h2>
+    <ul>
+        {% for post in results %}
+            <li>{{ post.title }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No results found for your query.</p>
+{% endif %}
