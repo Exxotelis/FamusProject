@@ -1,9 +1,9 @@
 # search/urls.py
 from django.urls import path
-from .views import SearchPostView
+from . import views
 
 app_name = 'search'
 
 urlpatterns = [
-    path('', SearchPostView.as_view(), name='post_search'),  # Now accessible at /search/
+    path('search/', views.get_queryset, name='post_search'),  
 ]

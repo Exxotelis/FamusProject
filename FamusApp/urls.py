@@ -35,6 +35,7 @@ urlpatterns = [
     path('privacy-policy/', views.privacy_policy, name='privacy_policy'),
     path('terms-and-conditions/', views.terms_of_service, name='terms_of_service'),
     path('<slug:slug>/', views.game_detail, name='game_detail'),  # Direct game detail page without /games/
+    path('search/', views.get_queryset, name='post_search'), 
 
     path('ads.txt', views.ads_txt_view),
     path('robots.txt', lambda request: HttpResponse(
